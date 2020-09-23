@@ -29,8 +29,8 @@
 
     public function getAreaAndPer(){
 
-       return "area: "  . $this -> getArea()  . "<br>"
-        . "perimetro: " . $this -> getPer()  . "<br>";
+       return "Area: "  . $this -> getArea()  . "<br>"
+        . "Perimetro: " . $this -> getPer()  . "<br>";
 
     }
 
@@ -45,17 +45,30 @@
   }
 
 
-  // ereditarietà lato
-    class Cube extends Square{
+  // ereditarietà
+  class Cube extends Square{
 
+    public function getVol(){
 
+      return parent::getArea() * $this -> lato;
     }
 
+    public function getSuperf(){
+
+      return 6 * parent::getArea();
+    }
+
+    public function __toString(){
+
+      return "CUBE<br>Volume : ". $this -> getVol(). "<br>"
+      . "Superficie : ". $this -> getSuperf(). "<br><br>";
+    }
+  }
 
   $square = new Square(4);
   echo $square;
   echo "<br>";
 
-  // $cube = new Cube(3);
-  // echo $cube;
-  // echo "<br>";
+  $cube = new Cube(3);
+  echo $cube;
+  echo "<br>";
