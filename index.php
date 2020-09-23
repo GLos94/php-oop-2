@@ -45,7 +45,8 @@
   }
 
 
-  // ereditarietà
+// ereditarietà
+// metodo 1
   class Cube extends Square{
 
     public function getVol(){
@@ -64,6 +65,30 @@
       . "Superficie : ". $this -> getSuperf(). "<br><br>";
     }
   }
+
+// metodo 2
+  // class Cube extends Square{
+  //
+  //   public function __construct( $lato ){
+  //          parent::__construct($lato);
+  //      }
+  //
+  //    public function getVol(){
+  //
+  //      return $this -> lato * $this -> lato * $this -> lato;
+  //    }
+  //
+  //    public function getSuperf(){
+  //
+  //      return 6 * $this -> lato * $this -> lato ;
+  //    }
+  //
+  //    public function __toString(){
+  //
+  //        return "CUBE<br>Volume : ". $this -> getVol(). "<br>"
+  //        . "Superficie : ". $this -> getSuperf(). "<br><br>";
+  //      }
+  // }
 
   $square = new Square(4);
   echo $square;
